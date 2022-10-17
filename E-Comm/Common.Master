@@ -1,0 +1,67 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Common.master.cs" Inherits="E_Comm.Common" %>
+
+<%@ Register src="Menu.ascx" tagname="Menu" tagprefix="uc1" %>
+<%@ Register src="Footer.ascx" tagname="Footer" tagprefix="uc2" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+   
+   
+    <style type="text/css">
+      table{
+          width:100%;
+      }
+    </style>
+   
+   
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <table class="auto-style1">
+            <tr>
+                <td colspan="2">
+                    <asp:ImageButton ID="ImageButton1" runat="server" CausesValidation="False" Height="50px" ImageUrl="~/Images/logo.png" PostBackUrl="~/Home.aspx" Width="152px" />
+                </td>
+                <td>
+                    <uc1:Menu ID="Menu1" runat="server" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    
+                    <asp:Image ID="Image1" runat="server" Height="250px" ImageUrl="~/Images/banner.jpg" Width="1255px" />
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style2">
+                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/ReadQueryString.aspx?category=Furniture">Furniture</asp:HyperLink>
+                    <br />
+                    <br />
+                    <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/ReadQueryString.aspx?category=Electronics">Electronics</asp:HyperLink>
+                    <br />
+                    <br />
+                    <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/ListByCategory.aspx">Camera</asp:HyperLink>
+                    <br />
+                    <br />
+                    <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/ListByCategory.aspx">Home Needs</asp:HyperLink>
+                </td>
+                <td colspan="2">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <uc2:Footer ID="Footer1" runat="server" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
